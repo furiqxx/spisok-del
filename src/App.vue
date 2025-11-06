@@ -32,20 +32,17 @@
 <script setup lang="ts">
 import { ref, computed } from "vue";
 
-// Массив дел tasks с полями: id, title, text
 const tasks = ref([
-  { id: 1, title: "Посетить коллед", text: "Желательно все пары", isUrgent: true },
+  { id: 1, title: "Посетить колледж", text: "Желательно все пары", isUrgent: true },
   { id: 2, title: "Сделать домашнее задание", text: "Желательно полностью" },
   { id: 3, title: "Встретиться с друзьями", text: "", isUrgent: true },
   { id: 4, title: "Выспаться", text: "Что то невозможное" },
 ]);
 
-// Computed свойство для подсчета количества задач
 const tasksCount = computed(() => {
   return `${tasks.value.length} задач`;
 });
 
-// Функция для выполнения задачи
 function completeTask(task: any) {
   alert(`Задача "${task.title}" выполнена!`);
 }
